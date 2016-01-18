@@ -18,12 +18,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Chain-Link\\PHP\\": "src"
+      "ChainLink\\PHP\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Chain-Link\\PHP\\Tests\\": "tests"
+      "ChainLink\\PHP\\Tests\\": "tests"
     }
   }
 }
