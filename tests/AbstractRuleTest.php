@@ -28,4 +28,8 @@ abstract class AbstractRuleTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('ChainLink\PHP\Rule', $this->rule);
 
     }
+
+    public function testEvaluate() {
+       $this->assertTrue($this->rule->evaluate($name = "Equals", $paramaters = [true, true]));
+    }
 }
