@@ -2,15 +2,14 @@
 
 namespace ChainLink\PHP\Tests;
 
-
 use Mockery;
 
-abstract class AbstractTest extends \PHPUnit_Framework_TestCase
+class TestHarness extends AbstractTest
 {
-    protected $testSubject;
 
     public function setUp ()
     {
+        $this->testSubject = Mockery::mock('ChainLink\PHP\ChainLink');
         parent::setUp();
     }
 
@@ -20,7 +19,5 @@ abstract class AbstractTest extends \PHPUnit_Framework_TestCase
         parent::tearDown();
     }
 
-    public function testIsInstanceOf() {
-        $this->assertInstanceOf('ChainLink\PHP\ChainLink', $this->testSubject);
-    }
+
 }
