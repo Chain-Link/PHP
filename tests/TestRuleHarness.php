@@ -4,12 +4,11 @@ namespace ChainLink\PHP\Tests;
 
 use Mockery;
 
-class TestHarness extends AbstractTest
+class TestRuleHarness extends AbstractRuleTest
 {
-
     public function setUp ()
     {
-        $this->testSubject = Mockery::mock('ChainLink\PHP\ChainLink');
+        $this->rule = Mockery::mock('ChainLink\PHP\Rule');
         parent::setUp();
     }
 
@@ -18,6 +17,4 @@ class TestHarness extends AbstractTest
         Mockery::close();
         parent::tearDown();
     }
-
-
 }
