@@ -18,12 +18,20 @@ class TestRuleHarness extends AbstractRuleTest
         parent::tearDown();
     }
 
-    public function testEvaluate() {
+    public function testEvaluateReturnsTrue() {
         $this->rule->shouldReceive('evaluate')
                    ->withAnyArgs('name', array('expected', 'input'))
                    ->andReturn(true)
                    ->getMock();
-        parent::testEvaluate();
+        parent::testEvaluateReturnsTrue();
+    }
+
+    public function testEvaluateReturnsFalse() {
+        $this->rule->shouldReceive('evaluate')
+                   ->withAnyArgs('name', array('expected', 'input'))
+                   ->andReturn(false)
+                   ->getMock();
+        parent::testEvaluateReturnsFalse();
     }
 
 
