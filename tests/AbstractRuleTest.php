@@ -42,7 +42,15 @@ abstract class AbstractRuleTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testEqualsFalse() {
-        $this->assertTrue($this->rule->evaluate($name = "Equals", $paramaters = [true, true]));
+        $this->assertFalse($this->rule->evaluate($name = "Equals", $paramaters = [false, true]));
+    }
+
+    public function testNotEqualTrue() {
+        $this->assertTrue($this->rule->evaluate($name = "NotEqual", $paramaters = [false, true]));
+    }
+
+    public function testNotEqualFalse() {
+        $this->assertFalse($this->rule->evaluate($name = "NotEqual", $paramaters = [true, true]));
     }
 
 }

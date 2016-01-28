@@ -39,7 +39,7 @@ class TestRuleHarness extends AbstractRuleTest
                    ->withAnyArgs('name', array('expected', 'input'))
                    ->andReturn(true)
                    ->getMock();
-        parent::testEvaluateReturnsTrue();
+        parent::testEqualsTrue();
     }
 
     public function testEqualsFalse() {
@@ -47,8 +47,23 @@ class TestRuleHarness extends AbstractRuleTest
                    ->withAnyArgs('name', array('expected', 'input'))
                    ->andReturn(false)
                    ->getMock();
-        parent::testEvaluateReturnsFalse();
+        parent::testEqualsFalse();
     }
 
+    public function testNotEqualTrue() {
+        $this->rule->shouldReceive('evaluate')
+                   ->withAnyArgs('name', array('expected', 'input'))
+                   ->andReturn(true)
+                   ->getMock();
+        parent::testNotEqualTrue();
+    }
+
+    public function testNotEqualFalse() {
+        $this->rule->shouldReceive('evaluate')
+                   ->withAnyArgs('name', array('expected', 'input'))
+                   ->andReturn(false)
+                   ->getMock();
+        parent::testNotEqualFalse();
+    }
 
 }
